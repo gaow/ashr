@@ -1,7 +1,5 @@
 #include <Rcpp.h>
-#include <cmath>
 #include <vector>
-#include <cmath> //not sure this is necessary
 #include <algorithm>
 
 // [[Rcpp::plugins(openmp)]]
@@ -14,27 +12,8 @@
 
 using namespace Rcpp;
 
-int f(int i) {
-  std::this_thread::sleep_for (std::chrono::seconds(1));
-  return i;
-}
-
-// [[Rcpp::depends(RcppArmadillo)]]
-// [[Rcpp::depends(RcppEigen)]]
 
 // [[Rcpp::export]]
-
-int threadcheck(int i)
-{
-  int n_threads = i;
-  std::cout << n_threads << " threads ..." << std::endl;
-  std::vector<int> M(12);
-#pragma omp parallel for num_threads(n_threads)
-  for (int i=0; i<12; i++)
-    M[i] = f(i);
-  return 0;
-}
-
 
 Rcpp::List fixptfn_kushal(NumericVector pi_est,NumericMatrix matrix_lik, NumericVector prior){
 //  clock_t start = clock();

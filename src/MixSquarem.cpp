@@ -1,4 +1,4 @@
-#include <Rcpp>
+#include <Rcpp.h>
 #include <cmath>
 #include <vector>
 #include <cmath> //not sure this is necessary

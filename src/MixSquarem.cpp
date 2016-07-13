@@ -1,10 +1,6 @@
+#include <Rcpp>
 #include <cmath>
-#include <thread>
-#include <typeinfo>
-#include <omp.h>
-#include <chrono>
 #include <vector>
-#include <stdlib.h> 
 #include <cmath> //not sure this is necessary
 #include <algorithm>
 
@@ -17,7 +13,6 @@
 // CPPFLAGS: -I/usr/local/opt/openblas/include
 
 using namespace Rcpp;
-using namespace std;
 
 int f(int i) {
   std::this_thread::sleep_for (std::chrono::seconds(1));

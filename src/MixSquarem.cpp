@@ -43,7 +43,7 @@ Rcpp::List fixptfn_kushal(NumericVector pi_est,NumericMatrix matrix_lik, Numeric
 //  std::cout << elapsed_time_1 << std::endl;
   
   //  clock_t start2 = clock() ;
-#pragma omp parallel for num_threads(4)
+ // #pragma omp parallel for num_threads(4)
   //  for (int i=0;i<k;i++){
   //    m.column(i)=m.column(i)/m_rowsum;
   //  }
